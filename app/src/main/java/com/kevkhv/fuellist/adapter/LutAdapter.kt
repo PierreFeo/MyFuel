@@ -66,14 +66,14 @@ class LutViewHolder(
 
         binding.apply {
             titleView.text = lut.month
-            textView.text = "Пробег на начало месяца: ${lut.startingMileage}"
-            textView2.text = "Пробег на конец месяца: ${lut.endMileage}"
+            textViewValue.text = lut.startingMileage.toString()
+            textView2Value.text = lut.endMileage.toString()
             //remaining.text = "Остакток в баке на начло месяца: ${lut.residueLitres}"
-            remainingEnd.text = "Остакток на конец месяца: ${lut.endMonthLiters}"
-            textView3.text = "Заправлено литров: ${lut.litresTotal}"
-            mileagePeriod.mileagePeriod(lut)
-            textView4.switchColor(lut)
-            showLitersList.setOnClickListener {
+            remainingEnd.text = lut.endMonthLiters.toString()
+            textView3.text = lut.litresTotal.toString()
+            mileagePeriodValue.mileagePeriod(lut)
+            textView4Value.switchColor(lut)
+            textView.setOnClickListener {
                 onInteractionListener.showBottomSheetWithLiters(lut.id)
             }
 
@@ -136,7 +136,7 @@ class LutViewHolder(
 //                )
 //            )
         } else {
-            text = "Расчет расхода:  N/A"
+            text ="N/A"
 
         }
     }
@@ -145,7 +145,7 @@ class LutViewHolder(
         val mileagePeriod = if (lut.endMileage > 0 && lut.startingMileage > 0) {
             (lut.endMileage - lut.startingMileage).toString()
         } else "N/A"
-        text = "Пробег за перод: $mileagePeriod"
+        text = mileagePeriod
     }
 
     private fun roundDouble(double: Double): Double {

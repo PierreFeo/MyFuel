@@ -16,12 +16,18 @@
     <string name="month_december">Декабрь</string>
     <string name="month">Месяц</string>\
     <string name="endMil">Введите пробег на конец месяца:</string>
-    <string name="mileagePeriod">Пробег за месяц:</string>
+    <string name="mileagePeriod">Пробег за период</string>
     <string name="remaining">Остакток в баке на начало месяца</string>
     <string name="remainingEnd">Остакток в баке на конец месяца</string>
     <string name="endLiters">Введите остаток в баке на конец мсяца:</string>
     <string name="allFields">Все поля должны быть заполнены</string>
     <string name="notEmpty">Поле не может быть пустым </string>
+    <string name="mileageStart">Пробег на начало месяца: </string>
+    <string name="mileageEnd">Пробег на конец месяца </string>
+    <string name="remainderInBox">Остакток в баке </string>
+    <string name="refueledLiters">Заправлено </string>
+    <string name="consumption">Расход </string>
+
 
 
 
