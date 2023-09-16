@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:layout_margin="16dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
     android:clickable="true"
     app:cardCornerRadius="16dp"
     app:cardElevation="24dp">
@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/mainColor"
-        android:padding="@dimen/padding12dp">
+        android:padding="18dp">
 
         <TextView
             android:id="@+id/titleView"
@@ -24,25 +24,27 @@
             android:textColor="@color/mainColor2"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="@id/menuButton"
+            app:layout_constraintTop_toTopOf="@id/menuButton" />
 
 
-        <ImageButton
+        <ImageView
             android:id="@+id/menuButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@android:color/transparent"
             android:src="@drawable/ic_more_vert_48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/titleView" />
 
 
-        <ImageButton
+        <ImageView
             android:id="@+id/addFuelButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            android:src="@drawable/ic_baseline_local_gas_station_24"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/ic_baseline_list_alt_24"
+            android:layout_marginEnd="@dimen/padding12dp"
             app:layout_constraintEnd_toStartOf="@id/menuButton"
             app:layout_constraintTop_toTopOf="@id/menuButton" />
 
@@ -50,6 +52,7 @@
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
+            android:textSize="@dimen/text_size_16sp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/padding12dp"
             android:text="@string/mileageStart"
@@ -59,6 +62,7 @@
 
 
         <TextView
+            android:textSize="@dimen/text_size_16sp"
             android:id="@+id/textViewValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -69,6 +73,7 @@
             app:layout_constraintTop_toTopOf="@id/textView" />
 
         <TextView
+            android:textSize="@dimen/text_size_16sp"
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -78,6 +83,7 @@
             app:layout_constraintTop_toBottomOf="@id/textView" />
 
         <TextView
+            android:textSize="@dimen/text_size_16sp"
             android:id="@+id/textView2Value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -86,6 +92,19 @@
             android:textColor="@color/white"
             app:layout_constraintStart_toEndOf="@id/textView2"
             app:layout_constraintTop_toTopOf="@id/textView2" />
+
+        <ImageView
+            android:id="@+id/editValueMil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            app:layout_constraintTop_toTopOf="@id/textView2Value"
+            app:layout_constraintStart_toEndOf="@id/textView2Value"
+            android:layout_marginStart="@dimen/padding6dp"
+            app:layout_constraintBottom_toBottomOf="@id/textView2Value"
+
+            android:src="@drawable/ic_baseline_border_color_24" />
+
 
         <View
             android:id="@+id/barrierLine"
@@ -101,6 +120,7 @@
 
 
         <TextView
+            android:textSize="@dimen/text_size_16sp"
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -108,22 +128,25 @@
             android:text="@string/consumption"
             android:textColor="@color/white"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@id/menuButton"
+            android:layout_marginEnd="@dimen/padding12dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/addFuelButton"
             app:layout_constraintTop_toTopOf="@id/textView" />
 
         <TextView
+            android:textSize="@dimen/text_size_16sp"
             android:id="@+id/textView4Value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="10,034"
             android:textColor="@color/green"
-            app:layout_constraintEnd_toEndOf="@id/textView4"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/textView4"
             app:layout_constraintTop_toBottomOf="@id/textView4" />
 
 
         <TextView
+            android:textSize="@dimen/text_size_14sp"
             android:id="@+id/mileagePeriod"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -135,6 +158,7 @@
 
 
         <TextView
+            android:textSize="@dimen/text_size_14sp"
             android:id="@+id/remainingEnd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -146,6 +170,7 @@
 
 
         <TextView
+            android:textSize="@dimen/text_size_14sp"
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -156,10 +181,11 @@
 
 
         <TextView
+            android:textSize="@dimen/text_size_14sp"
             android:id="@+id/mileagePeriodValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/padding6dp"
+
             android:text="2732"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="@id/mileagePeriod"
@@ -167,6 +193,7 @@
             app:layout_constraintTop_toBottomOf="@id/mileagePeriod" />
 
         <TextView
+            android:textSize="@dimen/text_size_14sp"
             android:id="@+id/remainingEndValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -177,17 +204,40 @@
             app:layout_constraintTop_toBottomOf="@id/remainingEnd" />
 
 
+        <ImageView
+            android:id="@+id/addRemainderButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            app:layout_constraintTop_toTopOf="@id/remainingEndValue"
+            app:layout_constraintStart_toEndOf="@id/remainingEndValue"
+            app:layout_constraintBottom_toBottomOf="@id/remainingEndValue"
+            android:layout_marginStart="@dimen/padding6dp"
+          android:src="@drawable/ic_add_liters" />
+
+
         <TextView
+            android:textSize="@dimen/text_size_14sp"
             android:id="@+id/textView3Value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="240"
+
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="@id/textView3"
             app:layout_constraintStart_toStartOf="@id/textView3"
-            app:layout_constraintTop_toBottomOf="@id/textView3"
+            app:layout_constraintTop_toBottomOf="@id/textView3" />
 
-            />
+        <ImageView
+            android:id="@+id/addLitersButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+           app:layout_constraintTop_toTopOf="@id/textView3Value"
+          app:layout_constraintBottom_toBottomOf="@id/textView3Value"
+            app:layout_constraintStart_toEndOf="@id/textView3Value"
+            android:layout_marginStart="@dimen/padding6dp"
+            android:src="@drawable/ic_add_liters" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

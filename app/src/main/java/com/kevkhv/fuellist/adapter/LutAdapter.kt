@@ -69,24 +69,24 @@ class LutViewHolder(
             textViewValue.text = lut.startingMileage.toString()
             textView2Value.text = lut.endMileage.toString()
             //remaining.text = "Остакток в баке на начло месяца: ${lut.residueLitres}"
-            remainingEnd.text = lut.endMonthLiters.toString()
-            textView3.text = lut.litresTotal.toString()
+            remainingEndValue.text = lut.endMonthLiters.toString()
+            textView3Value.text = lut.litresTotal.toString()
             mileagePeriodValue.mileagePeriod(lut)
             textView4Value.switchColor(lut)
-            textView.setOnClickListener {
+            addFuelButton.setOnClickListener {
                 onInteractionListener.showBottomSheetWithLiters(lut.id)
             }
 
 
-            addFuelButton.setOnClickListener {
+            addLitersButton.setOnClickListener {
                 onInteractionListener.showAddFuelDialog(lut.id)
             }
 
-            textView2.setOnClickListener {
+            editValueMil.setOnClickListener {
                 onInteractionListener.showAddMileageDialog(lut)
             }
 
-            remainingEnd.setOnClickListener {
+            addRemainderButton.setOnClickListener {
                 onInteractionListener.showAddEndMonthLitersDialog(lut)
             }
 
@@ -122,7 +122,7 @@ class LutViewHolder(
 
 
                 (lut.litresTotal - (lut.endMonthLiters- lut.residueLitres)) * 100 / (lut.endMileage - lut.startingMileage).toDouble()
-            text = "Расчет расхода: ${String.format("%.3f", standart)}"
+            text = String.format("%.3f", standart)
 
 
 //                (lut.litresTotal + lut.residueLitres) * 100 / (lut.endMileage - lut.startingMileage).toDouble()
