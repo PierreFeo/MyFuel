@@ -11,9 +11,11 @@
     <color name="red"> #ff0000 </color>
     <color name="mainColor"> #3A3A3A </color>
     <color name="mainColor2"> #F9805B </color>
+    <color name="mainColor3"> #1a1919</color>
     <color name="mainTextColor"> #898989 </color>
     <color name="hyperLink"> #0000ff </color>
 
+    141414
 
     0645AD
 </resources>

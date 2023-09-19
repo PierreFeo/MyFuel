@@ -159,6 +159,9 @@ class FeedFragment : Fragment() {
         }
 
         binding.extendedFab.setOnClickListener {
+
+
+
             showStartDialog(null, viewModel.getLastLutFromD())
         }
 
