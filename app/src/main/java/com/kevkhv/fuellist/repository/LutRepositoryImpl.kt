@@ -46,8 +46,8 @@ class LutRepositoryImpl(
     override fun updateEndMileage(lutId: Int, endMileage: Int) =
         dao.updateEndMileage(lutId, endMileage)
 
-    override fun getLastLutFromDb(): Lut {
-        return dao.getLutById().toModel()
+    override fun getLastLutFromDb(): Lut? {
+        return dao.getLutById()?.toModel()
     }
 
     override fun updateEntMonthLiters(lutId: Int, endMonthLiters: Int) =

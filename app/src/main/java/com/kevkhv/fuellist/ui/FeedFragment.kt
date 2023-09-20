@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputLayout
 import com.kevkhv.fuellist.R
 import com.kevkhv.fuellist.adapter.LitersAdapter
@@ -159,10 +160,15 @@ class FeedFragment : Fragment() {
         }
 
         binding.extendedFab.setOnClickListener {
+            viewModel.getLastLutFromD()?.let {
+                if (it.endMonthLiters > 0 && it.endMileage > 0)
+                    showStartDialog(null, it) else
+                    dialogAlertShow()
+
+                //Toast.makeText(requireContext(), R.string.fill_in_last_month, 5).show()
+            } ?: showStartDialog(null, null)
 
 
-
-            showStartDialog(null, viewModel.getLastLutFromD())
         }
 
         return binding.root
@@ -233,7 +239,7 @@ class FeedFragment : Fragment() {
 
             override fun onLitersRemoveClicked(liters: Liters) {
                 viewModel.removeLiters(liters)
-                    dialog.hide()
+                dialog.hide()
             }
         })
 
@@ -246,6 +252,17 @@ class FeedFragment : Fragment() {
         removeButton.setOnClickListener {
             dialog.hide()
         }
+    }
+
+    private fun dialogAlertShow() {
+        MaterialAlertDialogBuilder(requireContext())
+
+            .setTitle(resources.getString(R.string.attention))
+            .setMessage(resources.getString(R.string.attention_message))
+            .setPositiveButton(resources.getString(R.string.ok)) { dialog, which ->
+            }
+
+            .show()
     }
 
 }

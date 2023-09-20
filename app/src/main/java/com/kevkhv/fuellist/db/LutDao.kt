@@ -45,7 +45,7 @@ interface LutDao {
     fun updateEndMileage(lutId: Int, endMileage: Int)
 
     @Query("SELECT * FROM lutsTable WHERE ID = (SELECT MAX(ID)  FROM lutsTable)")
-    fun getLutById(): LutEntity
+    fun getLutById(): LutEntity?
 
     @Query("UPDATE lutsTable SET endMonthLiters=:endMonthLiters WHERE id=:lutId")
     fun updateEndMonthLiters(lutId: Int, endMonthLiters: Int)

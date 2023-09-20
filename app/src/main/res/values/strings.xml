@@ -27,8 +27,10 @@
     <string name="remainderInBox">Остакток в баке </string>
     <string name="refueledLiters">Заправлено </string>
     <string name="consumption">Расход </string>
-
-
+    <string name="ok">OK</string>
+    <string name="attention">Внимание!</string>
+    <string name="attention_message">Перед началом нового месяца, заполните данные предыдущего:\n\n*Пробег на конец месяца\n*Остакток в баке </string>
+    <string name="list_of_gas_stations">Список заправок:</string>
 
 
 

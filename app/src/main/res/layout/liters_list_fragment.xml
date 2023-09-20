@@ -10,8 +10,14 @@
         android:id="@+id/accountsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Заправки"
-        app:layout_constraintStart_toStartOf="parent"
+       android:layout_marginTop="@dimen/padding12dp"
+        android:layout_marginStart="16dp"
+
+
+        android:text="@string/list_of_gas_stations"
+        android:textColor="@color/mainColor2"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/recyclerChoice"
         app:layout_constraintTop_toBottomOf="@id/removeLine" />
 
 
@@ -30,8 +36,9 @@
         android:id="@+id/recyclerChoice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/accountsTextView"
+        android:padding="@dimen/padding12dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/accountsTextView"
         tools:listitem="@layout/card_liters">
 
     </androidx.recyclerview.widget.RecyclerView>

@@ -69,5 +69,8 @@
     </style>
 
 
+    <style name="MyDialogAlertStyle" parent="MaterialAlertDialog.Material3">
+        <item name="backgroundTint">@color/mainColor2</item>
 
+    </style>
 </resources>
