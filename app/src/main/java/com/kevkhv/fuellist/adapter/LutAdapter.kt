@@ -118,25 +118,33 @@ class LutViewHolder(
     private fun TextView.switchColor(lut: Lut) {
 
         if (lut.endMileage > 0 && lut.litresTotal > 0) {
-            val standart:Double =
+            val standart: Double =
 
 
-                (lut.litresTotal - (lut.endMonthLiters- lut.residueLitres)) * 100 / (lut.endMileage - lut.startingMileage).toDouble()
+                (lut.litresTotal - (lut.endMonthLiters - lut.residueLitres)) * 100 / (lut.endMileage - lut.startingMileage).toDouble()
             text = String.format("%.3f", standart)
 
 
-//                (lut.litresTotal + lut.residueLitres) * 100 / (lut.endMileage - lut.startingMileage).toDouble()
-//            text = "Расчет расхода:  ${roundDouble(standart)}"
+            setTextColor(
+                if (standart >= 10.068) {
+                    resources.getColor(R.color.red)
+                } else if (standart <= 10.068) {
+                    resources.getColor(R.color.green)
+                } else {
+                    resources.getColor(R.color.mainColor)
+                }
+            )
 
 
-            //TODO i don't know winter limit, i will write this code later
 //            setTextColor(
 //                if (standart < 12) resources.getColor(R.color.green) else resources.getColor(
 //                    R.color.red
 //                )
 //            )
+//
+
         } else {
-            text ="N/A"
+            text = "N/A"
 
         }
     }
