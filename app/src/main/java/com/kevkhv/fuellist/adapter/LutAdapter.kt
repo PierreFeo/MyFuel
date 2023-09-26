@@ -124,7 +124,7 @@ class LutViewHolder(
                 (lut.litresTotal - (lut.endMonthLiters - lut.residueLitres)) * 100 / (lut.endMileage - lut.startingMileage).toDouble()
             text = String.format("%.3f", standart)
 
-
+// write here cycle if else array winter months
             setTextColor(
                 if (standart >= 10.068) {
                     resources.getColor(R.color.red)

@@ -59,9 +59,6 @@ class FeedFragment : Fragment() {
                         )
                     )
                 }
-                setNegativeButton("Отмена") { dialog, which ->
-                    Toast.makeText(requireContext(), "CLOSE", 12).show()
-                }
                 setView(dialogLayout)
                 show()
             }
