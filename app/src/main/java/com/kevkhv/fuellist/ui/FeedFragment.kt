@@ -130,7 +130,7 @@ class FeedFragment : Fragment() {
         }
 
         override fun onClickRoot() {
-            Log.d("ebat", "i click root")
+            Log.d("clickRoot", "i click root")
         }
     })
 

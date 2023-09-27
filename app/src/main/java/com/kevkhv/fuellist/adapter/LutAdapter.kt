@@ -120,28 +120,20 @@ class LutViewHolder(
         if (lut.endMileage > 0 && lut.litresTotal > 0) {
             val standart: Double =
 
-
                 (lut.litresTotal - (lut.endMonthLiters - lut.residueLitres)) * 100 / (lut.endMileage - lut.startingMileage).toDouble()
             text = String.format("%.3f", standart)
 
 // write here cycle if else array winter months
+
             setTextColor(
-                if (standart >= 10.068) {
-                    resources.getColor(R.color.red)
-                } else if (standart <= 10.068) {
+                if (standart <= summerNorm && !checkWinterMonth(lut)) {
+                    resources.getColor(R.color.green)
+                } else if (standart <= winterNorm && checkWinterMonth(lut)) {
                     resources.getColor(R.color.green)
                 } else {
-                    resources.getColor(R.color.mainColor)
+                    resources.getColor(R.color.red)
                 }
             )
-
-
-//            setTextColor(
-//                if (standart < 12) resources.getColor(R.color.green) else resources.getColor(
-//                    R.color.red
-//                )
-//            )
-//
 
         } else {
             text = "N/A"
@@ -158,5 +150,14 @@ class LutViewHolder(
 
     private fun roundDouble(double: Double): Double {
         return if (double.isNaN()) 0.0 else (double * 100).roundToInt() / 100.0
+    }
+
+    private fun checkWinterMonth(lut: Lut): Boolean {
+        val wintersMonth = setOf("Ноябрь", "Декабрь", "Январь", "Февраль", "Март")
+        return wintersMonth.contains(lut.month)
+    }
+    companion object {
+        const val winterNorm = 12
+        const val summerNorm = 10.068
     }
 }

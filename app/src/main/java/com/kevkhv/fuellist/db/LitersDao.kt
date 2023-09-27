@@ -11,7 +11,7 @@ interface LitersDao {
     @Insert
     fun insertLiters(liters: LitersEntity)
 
-    @Query("SELECT * FROM liters_table WHERE lut_id =:id")
+    @Query("SELECT * FROM liters_table WHERE lut_id =:id ORDER BY id DESC")
     fun getLitersList(id: Int): LiveData<List<LitersEntity>>
 
     @Query("DELETE FROM liters_table WHERE id = :litersId")
