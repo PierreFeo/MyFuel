@@ -157,7 +157,7 @@ class LutViewHolder(
         return wintersMonth.contains(lut.month)
     }
     companion object {
-        const val winterNorm = 12
+        const val winterNorm = 11.684
         const val summerNorm = 10.068
     }
 }
